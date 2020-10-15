@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const UseStateCounter = () => {
   const [value, setValue] = useState(0);
+  const [secondValue, setSecondValue] = useState(0);
 
   const reset = () => {
     setValue(0);
@@ -9,11 +10,13 @@ const UseStateCounter = () => {
 
   const complexIncrease = () => {
     setTimeout(() => {
-      setValue((prevState) => {
+      setSecondValue((prevState) => {
         return prevState + 1
       })
     }, 2000)
   }
+
+  
 
   return (
   <>
@@ -27,7 +30,7 @@ const UseStateCounter = () => {
 
   <section style={{ margin: '4rem 0'}}>
     <h2>more complex counter</h2>
-    <h1>{value}</h1>
+    <h1>{secondValue}</h1>
     <button className="btn" onClick={complexIncrease}>
       increase later
       </button>
